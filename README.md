@@ -1,7 +1,7 @@
 # Anwesha-Android-App
 Anwesha 2k18 Android App
 
-## TODO
+## To-Do List
 - [ ] Put in a loader for Sign In/Out
 - [ ] Make a menu in My Profile for Sign Out
 - [ ] Make 'Sign Out' sign you out of fb too
