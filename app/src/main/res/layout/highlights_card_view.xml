@@ -34,7 +34,7 @@
                 android:text="@string/NJACK_Events"
                 android:textAllCaps="true"
                 android:textAppearance="@android:style/TextAppearance.Material.Headline"
-                android:textColor="@color/white"
+                android:textColor="@color/colorSignUp"
                 android:textSize="17sp" />
 
             <View
@@ -42,7 +42,7 @@
                 android:layout_height="1dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
-                android:background="@color/white" />
+                android:background="@color/colorSignIn" />
 
             <TextView
                 android:id="@+id/highlightscontent"
