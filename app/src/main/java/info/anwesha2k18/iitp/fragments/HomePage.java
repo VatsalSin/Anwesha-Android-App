@@ -37,7 +37,6 @@ import info.anwesha2k18.iitp.activities.SocialActivity;
 import info.anwesha2k18.iitp.activities.SponsorsActivity;
 import info.anwesha2k18.iitp.activities.TeamActivity;
 import info.anwesha2k18.iitp.activities.TimelineActivity;
-import info.anwesha2k18.iitp.adapters.EventsAdapter;
 import info.anwesha2k18.iitp.adapters.SliderAdapter;
 import info.anwesha2k18.iitp.listeners.ViewPagerCustomDuration;
 
@@ -161,16 +160,10 @@ HomePage extends android.support.v4.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+        //Slider of the homepage
         NUM_PAGES = getResources().obtainTypedArray(R.array.array_home_slide_show).length();
-
         final ViewPagerCustomDuration viewPagerCustomDuration = (ViewPagerCustomDuration) rootView.findViewById(R.id.events_pager);
         viewPagerCustomDuration.setScrollDuration(900);
-       // EventsAdapter eventsAdapter = new EventsAdapter(getContext(), getResources().obtainTypedArray(R.array.array_home_slide_show));
-
-        //viewPagerCustomDuration.setAdapter(eventsAdapter);
-        /*Adding automatic swap to the images
-        * */
-
         SliderAdapter sliderAdapter=new SliderAdapter(getContext(),getResources().obtainTypedArray(R.array.array_home_slide_show));
         viewPagerCustomDuration.setAdapter(sliderAdapter);
         final Handler handler = new Handler();
@@ -201,18 +194,7 @@ HomePage extends android.support.v4.app.Fragment {
         TextView textViewBelow = (TextView)rootView.findViewById(R.id.otherTextBelow);
         SetDaysToAnwesha(textView,textViewAbove,textViewBelow);
 
-//        FloatingActionButton fab = rootView.findViewById(R.id.fab_maps);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String uri = "https://www.google.com/maps/@?api=1&map_action=map&center=25.535752,84.851065&zoom=16&basemap=satellite";
-//                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-//                getContext().startActivity(intent);
-////                Intent intent = new Intent(rootView.getContext(), MyProfile.class);
-////                startActivity(intent);
-//            }
-//        });
-//
+
         eventsLinearLayout = rootView.findViewById(R.id.events);
         eventsLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -275,7 +257,6 @@ HomePage extends android.support.v4.app.Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(rootView.getContext(), AboutActivity.class);
                 startActivity(intent);
-                comingSoonToast.show();
             }
         });
 
@@ -310,9 +291,6 @@ HomePage extends android.support.v4.app.Fragment {
         mapLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                String uri = "https://www.google.com/maps/@?api=1&map_action=map&center=25.535752,84.851065&zoom=16&basemap=satellite";
-//                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-//                startActivity(intent);
                 Intent intent = new Intent(rootView.getContext(), MapActivity.class);
                 startActivity(intent);
             }
@@ -326,23 +304,6 @@ HomePage extends android.support.v4.app.Fragment {
             }
         });
 
-//        devLinearLayout = rootView.findViewById(R.id.developers);
-//        devLinearLayout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(rootView.getContext(), DevelopersActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        sponsorsLinearLayout = rootView.findViewById(R.id.sponsors_menu_item);
-//        sponsorsLinearLayout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(rootView.getContext(), SponsorsActivity.class);
-//                startActivity(intent);
-//            }
-//        });
 
         teamLinearLayout = rootView.findViewById(R.id.team);
         teamLinearLayout.setOnClickListener(new View.OnClickListener() {

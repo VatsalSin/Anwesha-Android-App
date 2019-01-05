@@ -12,7 +12,6 @@ import android.util.Log;
 import android.view.Window;
 import android.widget.Toast;
 import info.anwesha2k18.iitp.R;
-import info.anwesha2k18.iitp.database.BackgroundFetch;
 import info.anwesha2k18.iitp.utils.NetworkUtils;
 
 import java.io.IOException;
@@ -22,7 +21,7 @@ import pl.droidsonroids.gif.GifImageView;
 
 
 public class SplashActivity extends Activity {
-    int time=0;
+    int time=1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
